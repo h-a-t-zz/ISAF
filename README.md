@@ -14,10 +14,10 @@ jgs------------------------------------------------------------------
                    DEVSECOPS IN A PYTHON NUTSHELL        
 ```
 # Purpose
-This project is a "simple" python implementation of the DevSecOps Methodolgy, boiled down to the following pictures.
+This project is a "simple" python implementation of the DevSecOps Methodology, boiled down to the following picture:
 [![DevSecOps](https://insights.sei.cmu.edu/assets/content/CISecurityChecking2.png)](https://insights.sei.cmu.edu/sei_blog/2014/12/security-in-continuous-integration.html)  
 
-and an IRL implementation:  
+and an implementation attempt:  
 
 [![Try in PWD](Flow.png)](https://medium.com/@H.A.T/how-to-implement-webs-hospital-b0d8b85389ce)
 
@@ -55,3 +55,17 @@ root@b9300915e6ad:~# curl -sSL https://cli.openfaas.com | sh # Not cool :/
 chmod 777 /var/run/docker.sock
 ```
 - Upload ISAF.iynb to your Jupyter instance, and press play! \o/
+
+# Stack built upon:
+| Name       | Link                                       | License                   |
+|------------|--------------------------------------------|---------------------------|
+|    Clair   | https://github.com/coreos/clair            |        Apache License 2.0 |
+| JupyterLab | https://github.com/jupyterlab/jupyterlab   |              BSD 3-Clause |
+|    Klar    | https://github.com/optiopay/klar           |                       MIT |
+|    Nmap    | https://github.com/nmap/nmap               |        GNU General Public |
+|  OpenFaaS  | https://github.com/openfaas/faas           |                       MIT |
+|  Sonarqube | https://github.com/SonarSource/sonarqube/  | GNU Lesser General Public |
+|   Traefik  | https://github.com/containous/traefik      |                       MIT |
+|   WhatWeb  | https://github.com/urbanadventurer/WhatWeb |                     GPLv2 |
+|   WPScan   | https://github.com/wpscanteam/wpscan       |             Dual-Licensed |
+
