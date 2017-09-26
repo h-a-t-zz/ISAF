@@ -14,10 +14,12 @@ jgs------------------------------------------------------------------
                    DEVSECOPS IN A PYTHON NUTSHELL        
 ```
 # Purpose
-This project is a "simple" implementation of the DevSecOps Methodolgy, boiled down to the following pictures.
-[![DevSecOps](https://insights.sei.cmu.edu/assets/content/CISecurityChecking2.png)](https://insights.sei.cmu.edu/sei_blog/2014/12/security-in-continuous-integration.html)
+This project is a "simple" python implementation of the DevSecOps Methodolgy, boiled down to the following pictures.
+[![DevSecOps](https://insights.sei.cmu.edu/assets/content/CISecurityChecking2.png)](https://insights.sei.cmu.edu/sei_blog/2014/12/security-in-continuous-integration.html)  
 
-[![Try in PWD](DevSecOps.png)](https://medium.com/@H.A.T/how-to-implement-webs-hospital-b0d8b85389ce)
+and an IRL implementation:  
+
+[![Try in PWD](Flow.png)](https://medium.com/@H.A.T/how-to-implement-webs-hospital-b0d8b85389ce)
 
 # Init
 ## Stack Deployement
