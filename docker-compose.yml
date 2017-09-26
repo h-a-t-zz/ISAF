@@ -1,8 +1,6 @@
 version: "3.2"
 services:
     gateway:
-        labels:
-            - "traefik.enable=false"
         volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
         ports:
@@ -18,8 +16,6 @@ services:
                     - 'node.role == manager'
                     - 'node.platform.os == linux'
     prometheus:
-        labels:
-            - "traefik.enable=false"
         image: functions/prometheus:latest  # autobuild from Dockerfile in repo.
         command: "-config.file=/etc/prometheus/prometheus.yml -storage.local.path=/prometheus -storage.local.memory-chunks=10000 --alertmanager.url=http://alertmanager:9093"
         ports:
@@ -38,13 +34,9 @@ services:
                     - 'node.platform.os == linux'
 
     alertmanager:
-        labels:
-            - "traefik.enable=false"
         image: functions/alertmanager:latest    # autobuild from Dockerfile in repo.
         environment:
             no_proxy: "gateway"
-#        volumes:
-#            - ./prometheus/alertmanager.yml:/alertmanager.yml
         command:
             - '-config.file=/alertmanager.yml'
         networks:
@@ -56,37 +48,8 @@ services:
                 constraints:
                     - 'node.role == manager'
                     - 'node.platform.os == linux'
-    
-
-
-    traefik:
-        labels:
-            - "traefik.enable=false"
-        image: traefik
-        command: "-c /dev/null --web --docker --docker.domain=docker.localhost --docker.swarmmode=true  --logLevel=DEBUG"
-        volumes:
-            - "/var/run/docker.sock:/var/run/docker.sock"
-        ports:
-            - 80:80
-            - 8008:8080
-        depends_on:
-            - gateway
-            - alertmanager
-        environment:
-            no_proxy: "gateway"
-        networks:
-            - functions
-        deploy:
-            placement:
-                constraints:
-                    - 'node.role == manager'
-                    - 'node.platform.os == linux'
-
-
 
     registry:
-        labels:
-            - "traefik.enable=false"
         image: registry:2    # Image Registry
         environment:
             no_proxy: "gateway"
@@ -101,8 +64,6 @@ services:
                     - 'node.platform.os == linux'
 
     jupyter:
-        labels:
-            - "traefik.enable=false"
         image: jupyter/base-notebook:latest    # Jupyter
         environment:
             no_proxy: "gateway"
@@ -121,13 +82,9 @@ services:
 
 
     sonarqube:
-        labels:
-            - "traefik.enable=false"
         image: sonarqube:latest    # Sonarqube Code Analysis
         environment:
             no_proxy: "gateway"
-#        volumes:
-#            - "/var/run/docker.sock:/var/run/docker.sock"
         networks:
             - functions
         ports:
@@ -138,14 +95,8 @@ services:
                     - 'node.role == manager'
                     - 'node.platform.os == linux'
 
-
-
-    # Sample functions go here.
-
     # Service label of "function" allows functions to show up in UI on http://gateway:8080/
     webhookstash:
-        labels:
-            - "traefik.enable=false"
         image: functions/webhookstash:latest
         labels:
             function: "true"

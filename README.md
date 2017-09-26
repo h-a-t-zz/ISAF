@@ -19,26 +19,23 @@ This project is a "simple" python implementation of the DevSecOps Methodology, b
 
 and an implementation attempt:  
 
-[![Try in PWD](Flow.png)](https://medium.com/@H.A.T/how-to-implement-webs-hospital-b0d8b85389ce)
+[![Go with the Flow Morty!!](Flow.png)](https://medium.com/@H.A.T/how-to-implement-webs-hospital-b0d8b85389ce)
 
-# Init
-## Stack Deployement
+# Stack Deployement
 You can quickly start this PoC (based on OpenFaaS) on Docker Swarm online using the community-run Docker playground: play-with-docker.com (PWD) by clicking the button below:  
 
-[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png)](http://labs.play-with-docker.com/?stack=https://gist.githubusercontent.com/h-a-t/eafbb19d7ce46c4ee4a541df018a5f37/raw/ed84dedd8fa08c7ac28bd41003b59c69a7b0593d/docker-compose.yml&stack_name=func)
+[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png)](http://labs.play-with-docker.com/?stack=https://gist.githubusercontent.com/h-a-t/eafbb19d7ce46c4ee4a541df018a5f37/raw/d1aa99f6fec38620f09ecd3a9bbfb79207cf3dde/docker-compose.yml&stack_name=func)
 
 Or use the docker-compose.yml file.
 
-## Prerequisite
+# Prerequisite
 - Get your Jupyter token:
 
 ```bash
-docker logs func_jupyter.1.shw9s15u6co3cuzp5sjft697t 2>&1 | grep token
-10:03:07.492 LabApp] The Jupyter Notebook is running at:
-
-http://[all ip addresses on your system]:8888/?token=54523693a4c91624e2efebd5e9dde139b784297e30089504
-
-to login with a token: http://localhost:8888/?token=54523693a4c91624e2efebd5e9dde139b784297e30089504
+$ docker service logs func_jupyter 2>&1 | grep token
+func_jupyter.1.xam77gaqxi5s@node1    | [I 18:42:54.562 LabApp] The Jupyter Notebook is running at: http://[all ip addresses on your system]:8888/?token=5afdefee1c98acac0bbf29ae9972b7ccd23c50c115e74e49
+func_jupyter.1.xam77gaqxi5s@node1    |     to login with a token:
+func_jupyter.1.xam77gaqxi5s@node1    |         http://localhost:8888/?token=5afdefee1c98acac0bbf29ae9972b7ccd23c50c115e74e49
 ```
 
 - Install git, unzip, curl and faas-cli in the Jupyter container:
@@ -49,14 +46,17 @@ root@b9300915e6ad:~# apt-get update && apt-get -y install unzip git curl
 root@b9300915e6ad:~# curl -sSL https://cli.openfaas.com | sh # Not cool :/
 ```
 
-- Change permissions of docker.sock for the sack of this PoC. :warning:Do not do this in a production environment:bomb:
+- Change permissions of docker.sock for the sack of this PoC. :warning: Do not do this in a production environment :bomb:
 
 ```bash
 chmod 777 /var/run/docker.sock
 ```
+
 - Upload ISAF.iynb to your Jupyter instance, and press play! \o/
 
-# Stack built upon:
+
+# Stack built upon:  
+
 | Name       | Link                                       | License                   |
 |------------|--------------------------------------------|---------------------------|
 |    Clair   | https://github.com/coreos/clair            |        Apache License 2.0 |
@@ -65,7 +65,6 @@ chmod 777 /var/run/docker.sock
 |    Nmap    | https://github.com/nmap/nmap               |        GNU General Public |
 |  OpenFaaS  | https://github.com/openfaas/faas           |                       MIT |
 |  Sonarqube | https://github.com/SonarSource/sonarqube/  | GNU Lesser General Public |
-|   Traefik  | https://github.com/containous/traefik      |                       MIT |
 |   WhatWeb  | https://github.com/urbanadventurer/WhatWeb |                     GPLv2 |
 |   WPScan   | https://github.com/wpscanteam/wpscan       |             Dual-Licensed |
 
