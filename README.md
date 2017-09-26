@@ -1,5 +1,5 @@
-# ISAF (إسعاف)  
-## Integrated Security Assessments in your dev Flow :ambulance:
+# :ambulance: ISAF (إسعاف) :ambulance: 
+## Integrated Security Assessments for your dev Flow 
 ```
     EeeiiiiiEEiiiii.....                                             
        \|/                                                           
@@ -41,9 +41,9 @@ root@b9300915e6ad:~# apt-get update && apt-get -y install unzip git curl
 root@b9300915e6ad:~# curl -sSL https://cli.openfaas.com | sh # Not cool :/
 ```
 
-- Change permissions of docker.sock for the sack of this PoC. VERY Bad habit /o\, Do not try at home production.
+- Change permissions of docker.sock for the sack of this PoC. :warning:Do not do this in a production environment:bomb:
 
 ```bash
 chmod 777 /var/run/docker.sock
 ```
-- Upload iynb files to your Jupyter instance, and press play! \o/
+- Upload ISAF.iynb to your Jupyter instance, and press play! \o/
