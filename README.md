@@ -1,5 +1,5 @@
-# :ambulance: ISAF (إسعاف) :ambulance: 
-## Integrated Security Assessments for your dev Flow 
+# :ambulance: ISAF (إسعاف) :ambulance:
+## Integrated Security Assessments for your dev Flow
 ```
     EeeiiiiiEEiiiii.....                                             
        \|/                                                           
@@ -10,9 +10,15 @@
 =========================== ;  +  '~``; =============================
                             =-@-----@-'                              
 jgs------------------------------------------------------------------
-                                                                     
+
                    DEVSECOPS IN A PYTHON NUTSHELL        
 ```
+# Purpose
+This project is a "simple" implementation of the DevSecOps Methodolgy, boiled down to the following pictures.
+[![DevSecOps](https://insights.sei.cmu.edu/assets/content/CISecurityChecking2.png)](https://insights.sei.cmu.edu/sei_blog/2014/12/security-in-continuous-integration.html)
+
+[![Try in PWD](DevSecOps.png)](https://medium.com/@H.A.T/how-to-implement-webs-hospital-b0d8b85389ce)
+
 # Init
 ## Stack Deployement
 You can quickly start this PoC (based on OpenFaaS) on Docker Swarm online using the community-run Docker playground: play-with-docker.com (PWD) by clicking the button below:  
@@ -25,10 +31,10 @@ Or use the docker-compose.yml file.
 - Get your Jupyter token:
 
 ```bash
-docker logs func_jupyter.1.shw9s15u6co3cuzp5sjft697t 2>&1 | grep token 
-10:03:07.492 LabApp] The Jupyter Notebook is running at: 
+docker logs func_jupyter.1.shw9s15u6co3cuzp5sjft697t 2>&1 | grep token
+10:03:07.492 LabApp] The Jupyter Notebook is running at:
 
-http://[all ip addresses on your system]:8888/?token=54523693a4c91624e2efebd5e9dde139b784297e30089504 
+http://[all ip addresses on your system]:8888/?token=54523693a4c91624e2efebd5e9dde139b784297e30089504
 
 to login with a token: http://localhost:8888/?token=54523693a4c91624e2efebd5e9dde139b784297e30089504
 ```
