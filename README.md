@@ -1,5 +1,5 @@
 # ISAF (إسعاف)  
-## Integrate Security Assessments in your dev Flow
+## Integrated Security Assessments in your dev Flow :ambulance:
 ```
     EeeiiiiiEEiiiii.....                                             
        \|/                                                           
@@ -19,7 +19,7 @@ You can quickly start this PoC (based on OpenFaaS) on Docker Swarm online using 
 
 [![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png)](http://labs.play-with-docker.com/?stack=https://gist.githubusercontent.com/h-a-t/eafbb19d7ce46c4ee4a541df018a5f37/raw/ed84dedd8fa08c7ac28bd41003b59c69a7b0593d/docker-compose.yml&stack_name=func)
 
-Or use the following docker-compose.yml file.
+Or use the docker-compose.yml file.
 
 ## Prerequisite
 - Get your Jupyter token:
