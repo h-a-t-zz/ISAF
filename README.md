@@ -55,7 +55,7 @@ chmod 777 /var/run/docker.sock
 - Upload ISAF.iynb to your Jupyter instance, and press play! \o/
 
 
-# Stack built upon:  
+# PoC Stack built upon:  
 
 | Name       | Link                                       | License                   |
 |------------|--------------------------------------------|---------------------------|
