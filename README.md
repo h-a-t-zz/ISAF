@@ -38,12 +38,13 @@ func_jupyter.1.xam77gaqxi5s@node1    |     to login with a token:
 func_jupyter.1.xam77gaqxi5s@node1    |         http://localhost:8888/?token=5afdefee1c98acac0bbf29ae9972b7ccd23c50c115e74e49
 ```
 
-- Install git, unzip, curl and faas-cli in the Jupyter container:
+- Install git, unzip, curl and faas-cli in the Jupyter container, and git clone this repo:
 
 ```bash
 docker exec --user root -ti func_jupyter.1.shw9s15u6co3cuzp5sjft697t bash
 root@b9300915e6ad:~# apt-get update && apt-get -y install unzip git curl
 root@b9300915e6ad:~# curl -sSL https://cli.openfaas.com | sh # Not cool :/
+root@b9300915e6ad:~# git clone https://github.com/h-a-t/ISAF
 ```
 
 - Change permissions of docker.sock for the sack of this PoC. :warning: Do not do this in a production environment :bomb:
@@ -67,4 +68,3 @@ chmod 777 /var/run/docker.sock
 |  Sonarqube | https://github.com/SonarSource/sonarqube/  | GNU Lesser General Public |
 |   WhatWeb  | https://github.com/urbanadventurer/WhatWeb |                     GPLv2 |
 |   WPScan   | https://github.com/wpscanteam/wpscan       |             Dual-Licensed |
-
